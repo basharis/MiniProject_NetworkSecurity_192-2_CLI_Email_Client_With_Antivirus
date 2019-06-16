@@ -2,17 +2,34 @@
 
 ## Dependencies
 
-• Python 3.7 with modules: 
-  • smtplib (send) 
-  • imaplib (receive) 
-  • emails.mime 
-  • virus_total_apis 
-  • colorama
+Python 3.7 with modules: 
+  - smtplib (send) 
+  - imaplib (receive) 
+  - emails.mime 
+  - virus_total_apis 
+  - colorama
+
+Also, create Public API key @ virustotal.com
 
 ## Usage
 
+### Initialize tool
+
 ```
-     send
+usage: email_client.py [-h] [-hst {HOTMAIL,GMAIL}] -usr USER -pwd PASSWORD -api VT_API_KEY
+
+optional arguments:
+  -h, --help                                                            Show this help message and exit
+  -hst {HOTMAIL,GMAIL}, --host {HOTMAIL,GMAIL}                          Email Host (GMAIL/HOTMAIL)
+  -usr USER, --user USER                                                Email Username (e.g username@gmail.com)
+  -pwd PASSWORD, --password PASSWORD                                    Email Password
+  -api VT_API_KEY, --virus_total_api_key VT_API_KEY                     VirusTotal.com Public API Key
+```
+
+### Use tool
+
+```
+    send
            usage: send -r RECIPIENT [-s SUBJECT] [-b BODY] [-a ATTACHMENT_PATH]
             optional arguments:
               -r RECIPIENT, --recipient RECIPIENT                       Recipient of this email (e.g. jdoe@gmail.com)
